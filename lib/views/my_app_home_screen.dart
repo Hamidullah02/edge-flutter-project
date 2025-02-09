@@ -3,8 +3,8 @@ import 'package:iconsax/iconsax.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:recipe_app/Utils/constants.dart';
 import 'package:recipe_app/views/view_all_items.dart';
+import 'package:recipe_app/widget/food_items_display.dart';
 import '../widget/banner.dart';
-import '../widget/food_items_display.dart';
 import '../widget/my_icon_button.dart';
 
 class MyAppHomeScreen extends StatefulWidget {

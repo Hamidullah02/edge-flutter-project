@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_app/admin_screen.dart';
 import 'package:recipe_app/login_screen.dart';
-import 'package:recipe_app/main.dart';
 
 import 'Views/app_main_screen.dart';
 

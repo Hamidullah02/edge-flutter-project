@@ -2,7 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:provider/provider.dart';
+import 'package:recipe_app/Provider/userprofile_provider.dart';
 import 'package:recipe_app/upload_data.dart';
+import 'package:recipe_app/views/settings.dart';
 import 'Provider/favorite_provider.dart';
 import 'Provider/quantity.dart';
 import 'Views/app_main_screen.dart';
@@ -25,7 +27,10 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_)=>FavoriteProvider()),
         // for quantity provider
         ChangeNotifierProvider(create: (_) => QuantityProvider()),
-      ],
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+
+        // for user provider
+       ],
       child:  MaterialApp(
         debugShowCheckedModeBanner: false,
         // home: UploadRecipes(),

@@ -37,7 +37,7 @@ class FoodItemsDisplay extends StatelessWidget {
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(
-                        documentSnapshot['image'], // image from firestore
+                        documentSnapshot['image'],
                       ),
                     ),
                   ),
@@ -92,8 +92,6 @@ class FoodItemsDisplay extends StatelessWidget {
                 )
               ],
             ),
-            // for favorite button
-            // now let's whok on favorite button using provider
             Positioned(
               top: 5,
               right: 5,

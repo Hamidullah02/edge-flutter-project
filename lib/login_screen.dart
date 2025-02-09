@@ -24,9 +24,9 @@ class _LoginPageState extends State<LoginPage> {
     if (_formKey.currentState!.validate()) {
       try {
         if (_isLogin) {
-          await AuthService.signInWithEmailAndPassword(_emailController.text, _passwordController.text);
+          await AuthService.signInWithEmailAndPassword(_emailController.text, _passwordController.text,context);
         } else {
-          await AuthService.registerWithEmailAndPassword(_emailController.text, _passwordController.text);
+          await AuthService.registerWithEmailAndPassword(_emailController.text, _passwordController.text,context);
         }
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.toString())));

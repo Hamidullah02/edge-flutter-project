@@ -1,6 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:provider/provider.dart';
+import 'package:recipe_app/Provider/userprofile_provider.dart';
 import '../Utils/constants.dart';
 
 class Setting extends StatefulWidget {
@@ -13,6 +16,13 @@ class Setting extends StatefulWidget {
 class _SettingState extends State<Setting> {
   @override
   Widget build(BuildContext context) {
+    final userProvider = Provider.of<UserProvider>(context);
+    String userInitial = userProvider.initial;
+    String userName = userProvider.name;
+    String userEmail = userProvider.email;
+
+    print("$userEmail , $userName , $userInitial");
+
     return Scaffold(
       backgroundColor: kbackgroundColor,
       appBar: AppBar(
@@ -30,30 +40,25 @@ class _SettingState extends State<Setting> {
         children: [
           // Profile Section
           ListTile(
-            leading: const CircleAvatar(
+            leading: CircleAvatar(
               radius: 25,
-              backgroundImage: AssetImage(
-                "assets/image/raktim.png", // Replace with the correct path to your asset image
-              ),
+              child: Text(userInitial),
             ),
-            title: const Text(
-              "Raktim Chowdhury", // Replace with actual user name
-              style: TextStyle(
+            title: Text(
+              userName,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),
             ),
-            subtitle: const Text("raktimchowdhury39@gmail.com"), // Replace with actual email
+            subtitle: Text(userEmail), // Fixed the email display
           ),
           const Divider(),
 
-          // Account Settings
           ListTile(
             leading: const Icon(Iconsax.user, color: Colors.grey),
             title: const Text("Account Settings"),
-            onTap: () {
-              // Navigate to account settings screen
-            },
+            onTap: () {},
           ),
 
           // Notifications
@@ -61,22 +66,17 @@ class _SettingState extends State<Setting> {
             leading: const Icon(Iconsax.notification, color: Colors.grey),
             title: const Text("Notifications"),
             onTap: () {
-              // Navigate to notifications settings screen
             },
           ),
 
-          // Privacy and Security
           ListTile(
             leading: const Icon(Iconsax.lock, color: Colors.grey),
             title: const Text("Privacy & Security"),
-            onTap: () {
-              // Navigate to privacy & security screen
-            },
+            onTap: () {},
           ),
 
           const Divider(),
 
-          // Logout Option
           ListTile(
             leading: const Icon(Iconsax.logout, color: Colors.red),
             title: const Text(
@@ -113,3 +113,7 @@ class _SettingState extends State<Setting> {
     );
   }
 }
+
+
+
+

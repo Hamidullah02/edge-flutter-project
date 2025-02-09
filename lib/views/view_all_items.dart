@@ -23,7 +23,7 @@ class _ViewAllItemsState extends State<ViewAllItems> {
       backgroundColor: const Color(0xffeff1f7),
       appBar: AppBar(
         backgroundColor: kbackgroundColor,
-        automaticallyImplyLeading: false, // it removes the appbar back button
+        automaticallyImplyLeading: false,
         elevation: 0,
         actions: [
           const SizedBox(width: 15),
