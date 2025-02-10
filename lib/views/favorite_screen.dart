@@ -79,7 +79,6 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           padding: const EdgeInsets.all(10),
           child: GestureDetector(
             onTap: () {
-              // Navigate to RecipeDetailScreen when tapped
               Navigator.push(
                 context,
                 MaterialPageRoute(

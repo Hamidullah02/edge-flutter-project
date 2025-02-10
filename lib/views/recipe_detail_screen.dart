@@ -359,7 +359,7 @@ class CookNow extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cook Now'),
-        backgroundColor: kprimaryColor, // You can use your app's primary color here
+        backgroundColor: kprimaryColor,
         elevation: 0,
       ),
       body: Padding(
@@ -368,16 +368,16 @@ class CookNow extends StatelessWidget {
           itemCount: steps.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),  // Adds space between steps
+              padding: const EdgeInsets.only(bottom: 16.0),
               child: Card(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),  // Rounded corners for cards
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                elevation: 5,  // Gives a shadow effect
+                elevation: 5,
                 child: ListTile(
                   leading: Icon(
-                    Icons.restaurant,  // Cooking-related icon
-                    color: kprimaryColor,  // Primary color for icon
+                    Icons.restaurant,
+                    color: kprimaryColor,
                   ),
                   title: Text(
                     'Step ${index + 1}',
@@ -393,7 +393,7 @@ class CookNow extends StatelessWidget {
                       steps[index],
                       style: TextStyle(
                         fontSize: 16,
-                        color: Colors.black87,  // Slightly darker color for readability
+                        color: Colors.black87,
                       ),
                     ),
                   ),
